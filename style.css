@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 50vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #ebebf7;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #3f3e8a;
+  box-shadow: 0 5px 8px rgba(48, 47, 119, 0.3);
+}
+
+.navbar ul {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar ul li {
+  cursor: pointer;
+}
+
+.notification::before {
+  position: absolute;
+  content: attr(data-count);
+  width: 20px;
+  height: 20px;
+  top: -6px;
+  right: 85px;
+  padding: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: red;
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  animation: moveUp 0.8s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.notification.add::before {
+  opacity: 1;
+}
+
+.buttons {
+  align-self: center;
+  margin-top: 50%;
+}
+
+.buttons .btn {
+  width: 150px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #3f3e8a;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons .btn:hover {
+  background-color: #302f77;
+  box-shadow: 0 5px 8px rgba(48, 47, 119, 0.3);
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(-2px);
+  }
+}
